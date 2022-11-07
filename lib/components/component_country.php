@@ -1,17 +1,17 @@
 <?php 
-
+// include 'lib/helpers/session_helper.php';
 
 function HeaderCountry(){
 $str = '       
 
       
         <!-- end row -->
-
+        [MESSDATA]
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title mb-0">Add Country '. flash("Country").'</h4>
+                        <h4 class="card-title mb-0">Add Country </h4>
                     </div>
                     <div class="card-body">
                         <div class="row">

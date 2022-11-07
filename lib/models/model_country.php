@@ -28,12 +28,9 @@ class ModelCountry{
         $this->db->bind(':status', $data['status']);
 
         if($this->db->execute()){
-            $this->renderer->action_msg(true);
-           
+            return true;
         }else{
-            // return false;
-            $this->renderer->action_msg(false);
-           
+            return false;
         }
         
     }

@@ -29,11 +29,19 @@ class ControllerCountry{
         if(empty($data['country']) || empty($data['status'])){
             flash("login", "Please fill out all inputs");
             echo " No Data Fount";  
+            
             exit();
-        }else{
- //  Add Country
- $this->model->CountryAdd($data);
         }
+        //  Add Country
+        if($this->model->CountryAdd($data))
+        {
+            flash('insert', "Successfully inserted.....");
+            redirect("../country.php");
+        }else{
+            flash('insert', "Failed.....");
+            redirect("../country.php");
+        }
+     
 
          
        
