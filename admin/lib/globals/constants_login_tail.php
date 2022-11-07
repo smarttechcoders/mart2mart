@@ -1,0 +1,5 @@
+<?php
+
+define("LOGIN_TAIL_FILENAMEWITHOUTEXTENSION",'login');
+
+?>
