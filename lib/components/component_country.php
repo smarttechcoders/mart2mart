@@ -30,8 +30,8 @@ $str = '
                                             <label class="visually-hidden" for="status">Select</label>
                                             <div class="col-md-10">
                                                 <select class="form-select"  name="status">
-                                                    <option values="1">Active</option>
-                                                    <option values="0">Deactive</option>
+                                                    <option value="1">Active</option>
+                                                    <option value="0">Deactive</option>
                                                 </select>
                                             </div>
                                         </div>
