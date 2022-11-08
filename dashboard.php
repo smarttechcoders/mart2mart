@@ -7,7 +7,10 @@ include 'lib/controllers/controller_index_topnav.php';
 include 'lib/controllers/controller_sidebar.php';
 include 'lib/controllers/controller_dashboard_main_content.php';
 include 'lib/controllers/controller_dashboard_card.php';
+include 'lib/controllers/controller_check_session.php';
 
+$controllerCheckSession = new ControllerCheckSession();
+$controllerCheckSession->populate();
 
 $controllerDashboardHead = new ControllerDashboardHead();
 $controllerDashboardHead->populate();

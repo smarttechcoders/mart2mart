@@ -30,6 +30,8 @@ function component_index_tail(){
     <script src="assets/js/pages/pass-addon.init.js?var=[VERSION]"></script>
     <script src="assets/js/[FILENAMEWITHOUTEXTENSION].js?ver=[VERSION]"></script>
    <script src="assets/js/pages/eva-icon.init.js?var=[VERSION]"></script>
+
+
    
  ';
    

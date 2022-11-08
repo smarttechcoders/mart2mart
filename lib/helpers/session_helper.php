@@ -3,7 +3,12 @@ if(!isset($_SESSION)){
     session_start();
 }
 
-function flash($name = '', $message = '', $class = 'alert alert-success alert-dismissible'){
+function flash($name = '', $message = '', $class_style = 0){
+    if($class_style){
+        $class = 'alert alert-success alert-dismissible';
+    }else{
+        $class = 'alert alert-danger alert-dismissible';
+    }
     if(!empty($name)){
         if(!empty($message) && empty($_SESSION[$name])){
             $_SESSION[$name] = $message;
@@ -22,6 +27,6 @@ function flash($name = '', $message = '', $class = 'alert alert-success alert-di
 
 function redirect($location){
     header("location: ".$location);
-    exit();
+  
 }
 

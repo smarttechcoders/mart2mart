@@ -25,6 +25,21 @@
         <link href="assets/css/icons.min.css?var=[VERSION]" rel="stylesheet" type="text/css" />
         <!-- App Css-->
         <link href="assets/css/app.min.css?var=[VERSION]" id="app-style" rel="stylesheet" type="text/css" />
+        
+        
+        <link href="assets/css/datatable/dataTables.bootstrap.min.css?var=[VERSION]" id="dataTables-bootstrap" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" language="javascript" src="assets/js/datatable/jquery-3.5.1.js"></script>
+        <script type="text/javascript" language="javascript" src="assets/js/datatable/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" language="javascript" src="assets/js/datatable/dataTables.bootstrap.min.js"></script>
+        <script type="text/javascript" class="init">
+	
+
+$(document).ready(function () {
+	$("#example").DataTable();
+});
+
+
+	</script>
         ';
         return $str;
     }

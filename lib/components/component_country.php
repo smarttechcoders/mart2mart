@@ -48,22 +48,12 @@ $str = '
                 </div>
             </div>
         </div>
+
+    
      
-    </div> <!-- container-fluid -->
-</div>
-<!-- End Page-content -->
 
-
-</div>
 ';
     return $str;
 }
-function actionmsg(){
-    $str = '<div class="alert [CLSSMSG] alert-dismissible fade show" role="alert">
-    <i class="mdi mdi-check-all me-2"></i>
-    [ACTIONMSG]
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>';
-    return $str;
-}
+
 ?>

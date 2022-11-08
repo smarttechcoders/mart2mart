@@ -44,11 +44,11 @@ class CollatorLogin{
                 $this->createUserSession($loggedInUser);
             }else{
                 flash("login", "Password Incorrect");
-                redirect("../login.php");
+                header("location: ../login.php");
             }
         }else{
             flash("login", "No user found");
-            redirect("../login.php");
+            header("location: ../login.php");
         }
     }
     public function createUserSession($user){
@@ -63,20 +63,22 @@ class CollatorLogin{
     public function logout(){
         
         
+        
         unset($_SESSION['usersId']);
         unset($_SESSION['usersName']);
         unset($_SESSION['usersEmail']);
         session_destroy();
-        redirect("../login.php");
+        
+        header("location: ../login.php");
     }
 }
 
 $init = new CollatorLogin;
 
-if(isset($_SESSION['usersName'])){
+// if(isset($_SESSION['usersName'])){
     
-    header('location:../dashboard.php');
-}
+//     header('location:../dashboard.php');
+// }
 
 
 // on all screens requiring login, redirect if NOT logged in

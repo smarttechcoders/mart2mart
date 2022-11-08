@@ -1,5 +1,6 @@
 <?php
 include 'lib/helpers/session_helper.php';
+
 include 'lib/models/model_country.php';
 class ControllerCountry{
     public $model;
@@ -26,20 +27,23 @@ class ControllerCountry{
             'status' => trim($_POST['status'])
         ];
   
-        if(empty($data['country']) || empty($data['status'])){
-            flash("login", "Please fill out all inputs");
-            echo " No Data Fount";  
+        if(empty($data['country']) ){
+            flash("insert", "Please fill out Country Name inputs");
+            // echo " No Data Fount";  
+            redirect("../country.php");
             
             exit();
         }
         //  Add Country
         if($this->model->CountryAdd($data))
         {
-            flash('insert', "Successfully inserted.....");
+            flash("insert", "Successfully inserted.....",1);
             redirect("../country.php");
+            exit();
         }else{
-            flash('insert', "Failed.....");
+            flash("insert", "Failed.....");
             redirect("../country.php");
+            exit();
         }
      
 
@@ -58,6 +62,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         case 'add':
             $init->CountryAdd();
             break;
+        
         default:
         redirect("../country.php");
     }

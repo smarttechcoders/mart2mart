@@ -24,7 +24,8 @@ function login_page()
                                                 <div class="auth-content my-auto">
                                                     <div class="text-center">
                                                         <h5 class="mb-0">Welcome Back !</h5>
-                                                        <p class="text-muted mt-2">  '. flash("login").'Sign in to continue to Borex.</p>
+                                                        <p class="text-muted mt-2">  Sign in to continue to Borex.</p>
+                                                        <p>[ACTION_MESSAGE]</p>
                                                      
                                                     </div>
                                                      <form class="mt-4 pt-2" action="login.php" method="post">
