@@ -15,11 +15,17 @@ class RenderersCountryList{
         $i=1;
         foreach($arr as  $row)
         {
+            if($row['status']){
+                $status = '<span class="badge bg-success bg-gradient mb-2">Active</span>';
+            }else{
+                $status = '<span class="badge bg-warning bg-gradient mb-2">Dective</span>';
+            }
+
             $data .= ' <tr>
-            <td>'.$row['country_id'].'</td>
+            <td>'.$i++.'</td>
             <td>'.$row['country'].'</td>
-            <td>'.$row['status'].'</td>
-            <td><a href="country.php?action=edit&id='.$row['country_id'].'" title ="Delete" onclick="return confirm("Are you sure you want to delete this item?");" class="btn btn-danger btn-sm waves-effect waves-light"><i class="mdi mdi-trash-can d-block font-size-16"></i></a> </td>
+            <td>'.$status.'</td>
+            <td><a href="country.php?action=delete&id='.$row['country_id'].'" title ="Delete" onclick="return confirm(Are you sure you want to delete this item?);" class="btn btn-danger bg-gradient btn-sm"><i class="mdi mdi-trash-can d-block font-size-16"></i></a> </td>
             
         </tr>';
         }

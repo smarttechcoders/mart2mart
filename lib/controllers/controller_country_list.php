@@ -1,5 +1,6 @@
 <?php
 // include 'lib/helpers/session_helper.php';
+
 include 'lib/models/model_country_list.php';
 class ControllerCountryList{
 
@@ -17,14 +18,14 @@ class ControllerCountryList{
         $this->model->render();
         $action=isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
         $id=isset($_REQUEST['id']) ? $_REQUEST['id'] : '';
-        if($action == 'edit'){
+        if($action == 'delete'){
             // $this->model->Countrydelete($id);
             if($this->model->Countrydelete($id))
             {
-                flash("insert", "Successfully Deleted.....");
+                flash("insert", "Successfully Deleted.....",1);
                 // redirect("../country.php");
                 
-                header("location:../country.php");
+                // header("location:../country.php");
                 
             }else{
                 flash("insert", "Failed.....");

@@ -28,11 +28,11 @@ class ModelCountryList{
     public function Countrydelete($id){
         $this->db->query('DELETE FROM country WHERE country_id= :country_id ');
         $this->db->bind(':country_id', $id);
-        die();
+      
         if($this->db->single()){
-            return true;
-        }else{
             return false;
+        }else{
+            return true;
         }
     }
     public function render()

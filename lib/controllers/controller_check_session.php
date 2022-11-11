@@ -1,5 +1,5 @@
 <?php
-
+include 'lib/helpers/session_helper.php';
 include 'lib/models/model_check_session.php';
 class ControllerCheckSession{
     public $model;

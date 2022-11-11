@@ -1,12 +1,12 @@
 <?php
-// include 'lib/helpers/session_helper.php';
 
-include 'lib/models/model_country.php';
-class ControllerCountry{
+include 'lib/models/model_state.php';
+class ControllerStates{
     public $model;
     public $data;
     public function __construct()
-    { $this->model = new ModelCountry();
+    { $this->model = new Modelstates();
+        $this->model->stateList();
         
     }
     public function populate(){
@@ -19,26 +19,26 @@ class ControllerCountry{
         
 
     }
-
-    public function CountryAdd(){
+    public function StateAdd(){
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
          $data=[
-            'country' => trim($_POST['country']),
+            'country_id' => trim($_POST['country_id']),
+            'state' => trim($_POST['state']),
             'status' => trim($_POST['status'])
         ];
   
-        if(empty($data['country']) ){
-            flash("insert", "Please fill out Country Name inputs");
+        if(empty($data['country_id']) || empty($data['state']) ){
+            flash("insert", "Please fill out States Name inputs");
             // echo " No Data Fount";  
-            redirect("../country.php");
+            redirect("../state.php");
             
             exit();
         }
         //  Add Country
-        if($this->model->CountryAdd($data))
+        if($this->model->StateAdd($data))
         {
             flash("insert", "Successfully inserted.....",1);
-            redirect("../country.php");
+            redirect("../state.php");
             exit();
         }else{
             flash("insert", "Failed.....");
@@ -52,7 +52,7 @@ class ControllerCountry{
     }
 }
 
-$init = new ControllerCountry;
+$init = new ControllerStates;
 
 
 
@@ -60,7 +60,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     switch($_POST['action']){
         case 'add':
-            $init->CountryAdd();
+            $init->StateAdd();
             break;
         
         default:

@@ -112,7 +112,7 @@ function sidebar()
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="ecommerce-products.html" data-key="t-products">country</a></li>
-                        <li><a href="ecommerce-product-detail.html" data-key="t-product-detail">state </a></li>
+                        <li><a href="../state.php" data-key="t-state-detail">state list </a></li>
                         <li><a href="ecommerce-product-detail.html" data-key="t-product-detail">city </a></li>
                         <li><a href="../country.php" data-key="t-add-product">Add country</a></li>
                     </ul>
